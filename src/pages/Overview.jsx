@@ -6,7 +6,7 @@ const Overview = () => {
     <>
       <div className="wrapper">
         <Header />
-        <h2>Overview</h2>
+        <h2 className="text-center">Overview</h2>
         <Footer />
       </div>
     </>

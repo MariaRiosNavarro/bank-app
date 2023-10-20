@@ -6,7 +6,7 @@ const User = () => {
     <>
       <div className="wrapper">
         <Header />
-        <h2>User</h2>
+        <h2 className="text-center">User</h2>
         <Footer />
       </div>
     </>

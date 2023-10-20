@@ -6,7 +6,9 @@ const Login = () => {
     <>
       <div className="wrapper">
         <Header />
-        <Link to="/overview">Login</Link>
+        <Link to="/overview" className="text-center">
+          Login
+        </Link>
       </div>
     </>
   );
