@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom";
+import Header from "../components/Header/Header";
+
 const Login = () => {
   return (
     <>
-      <h2>Login</h2>
+      <div className="wrapper">
+        <Header />
+        <Link to="/overview">Login</Link>
+      </div>
     </>
   );
 };

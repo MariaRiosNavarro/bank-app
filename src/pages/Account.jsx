@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 const Account = () => {
   return (
     <>
-      <div className="account-wrapper">
+      <div className="wrapper">
         <Header />
         <h2>Account</h2>
         <Footer />

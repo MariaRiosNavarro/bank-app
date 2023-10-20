@@ -2,13 +2,13 @@
 @import "../../mixin.scss";
 
 .header-wrapper {
-  border: 5px solid $comp-color;
+  border: 3px solid $comp-color;
   outline-offset: 5px;
-  outline: 5px solid $color;
+  outline: 3px solid $color;
   background-color: $light-text;
   color: $color;
-  padding: 2rem;
-  margin: 1rem 2rem;
+  padding: 1rem;
+  margin: 0 2rem;
   border-radius: 10px;
 }
 
