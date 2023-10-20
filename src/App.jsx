@@ -1,7 +1,7 @@
 // import { useState } from "react";
 
 import "./App.scss";
-import Account from "./pages/Account";
+import Account from "./pages/account";
 
 function App() {
   // const [count, setCount] = useState(0);
