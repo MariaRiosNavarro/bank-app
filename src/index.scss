@@ -33,6 +33,14 @@ html {
   min-width: 100%;
 }
 
+.row {
+  @include f-row;
+}
+
+.column {
+  @include f-column;
+}
+
 .text-center {
   text-align: center;
   padding: 2rem;

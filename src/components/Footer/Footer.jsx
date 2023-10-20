@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Footer.scss";
 
-const Footer = ({ onClick }) => {
+const Footer = ({ handleAdd, handleRemove }) => {
   return (
     <div className="footer-wrapper">
       <Link to="/overview">
-        <NavigationButton svgIcon={homeSvg} onClick={onClick} />
+        <NavigationButton svgIcon={homeSvg} />
       </Link>
-      <NavigationButton svgIcon={addSvg} onClick={onClick} />
-      <NavigationButton svgIcon={removeSvg} onClick={onClick} />
+      <NavigationButton svgIcon={addSvg} onClick={handleAdd} />
+      <NavigationButton svgIcon={removeSvg} onClick={handleRemove} />
       <Link to="/user">
-        <NavigationButton svgIcon={userSvg} onClick={onClick} />
+        <NavigationButton svgIcon={userSvg} />
       </Link>
     </div>
   );
@@ -22,5 +22,6 @@ const Footer = ({ onClick }) => {
 export default Footer;
 
 Footer.propTypes = {
-  onClick: PropTypes.func,
+  handleAdd: PropTypes.func,
+  handleRemove: PropTypes.func,
 };
