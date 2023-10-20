@@ -3,7 +3,7 @@
 
 .card-wrapper {
   border-radius: 10px;
-  border: 1px solid $color;
+  border: 1px solid $comp-color;
   padding: 3rem;
   @include f-column;
   gap: 4rem;

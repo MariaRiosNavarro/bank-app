@@ -1,13 +1,12 @@
-import { useState } from "react";
 import "./AccountCard.scss";
+import { useAppContext } from "../../AppContext";
 
 const AccountCard = () => {
-  const [totalCardAmount, setTotalCardAmount] = useState(0);
-
   //Future TODO: add the possibility to add more cards to the array
 
-  let cardsAmounts = [totalCardAmount];
+  const { totalCardAmount } = useAppContext();
 
+  const cardsAmounts = [totalCardAmount];
   // Here we reduce all amounts of all cards
   let totalAmount = cardsAmounts.reduce((a, b) => a + b);
 

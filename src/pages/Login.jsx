@@ -7,7 +7,7 @@ const Login = () => {
       <div className="wrapper">
         <Header />
         <Link to="/overview" className="text-center">
-          Login
+          <h2 className="center">Login</h2>
         </Link>
       </div>
     </>
