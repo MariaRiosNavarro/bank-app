@@ -1,4 +1,4 @@
-@import "./variable.scss";
+@import "./variables.scss";
 @import "./mixin.scss";
 
 /* -Global Styles*/
@@ -13,6 +13,11 @@
   src: url("../src/assets/fonts/Roboto/Roboto-Bold.ttf");
 }
 
+html {
+  font-size: 62.5%;
+  @include robo-light;
+}
+
 img {
   max-width: 100%;
   height: 100%;
@@ -22,4 +27,8 @@ img {
 ul,
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }

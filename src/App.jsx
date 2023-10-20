@@ -1,11 +1,15 @@
 // import { useState } from "react";
 
 import "./App.scss";
+import Account from "./pages/Account";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
+    <>
+      <Account />
+    </>
     // <>
     //   <div>
     //     <a href="https://vitejs.dev" target="_blank">
