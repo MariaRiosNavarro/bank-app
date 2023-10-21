@@ -7,7 +7,7 @@ const User = () => {
       <div className="wrapper">
         <Header />
         <h2 className="text-center">User</h2>
-        <Footer />
+        <Footer selected={"user"} />
       </div>
     </>
   );

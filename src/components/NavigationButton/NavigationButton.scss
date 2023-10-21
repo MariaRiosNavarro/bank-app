@@ -1,2 +1,24 @@
 @import "../../variables.scss";
 @import "../../mixin.scss";
+
+.nav-btn-wrapper {
+  svg {
+    height: 5rem;
+    width: 5rem;
+    border: 3px solid $color;
+    border-radius: 50%;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: $same-color-light;
+    fill: $color;
+    &:hover {
+      background-color: $comp-color;
+    }
+  }
+}
+
+.selected {
+  svg {
+    background-color: $comp-color;
+  }
+}

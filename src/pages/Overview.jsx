@@ -24,7 +24,7 @@ const Overview = () => {
             </Link>
           </div>
         </div>
-        <Footer />
+        <Footer selected={"overview"} />
       </div>
     </>
   );

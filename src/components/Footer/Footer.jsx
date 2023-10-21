@@ -4,16 +4,19 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Footer.scss";
 
-const Footer = ({ onClickAdd, onClickRemove }) => {
+const Footer = ({ onClickAdd, onClickRemove, selected }) => {
   return (
     <div className="footer-wrapper">
       <Link to="/overview">
-        <NavigationButton svgIcon={homeSvg} />
+        <NavigationButton
+          svgIcon={homeSvg}
+          selected={selected === "overview"}
+        />
       </Link>
       <NavigationButton svgIcon={addSvg} onClick={onClickAdd} />
       <NavigationButton svgIcon={removeSvg} onClick={onClickRemove} />
       <Link to="/user">
-        <NavigationButton svgIcon={userSvg} />
+        <NavigationButton svgIcon={userSvg} selected={selected === "user"} />
       </Link>
     </div>
   );
@@ -24,4 +27,5 @@ export default Footer;
 Footer.propTypes = {
   onClickAdd: PropTypes.func,
   onClickRemove: PropTypes.func,
+  selected: PropTypes.string,
 };
