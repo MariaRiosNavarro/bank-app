@@ -13,6 +13,7 @@ const Account = () => {
   const [isAddToastVisible, setIsAddToastVisible] = useState(false);
   const [isRemoveToastVisible, setIsRemoveToastVisible] = useState(false);
   const [value, setValue] = useState(0);
+  const [isErrorToastVisible, setIsErrorToastVisible] = useState(false);
 
   const openAddInput = () => {
     setIsAddToastVisible(true);
@@ -24,15 +25,24 @@ const Account = () => {
 
   const handleSubmit = (value, isAdding) => {
     const valueAsNumber = parseFloat(value);
+
     if (isAdding) {
       setTotalCardAmount(totalCardAmount + valueAsNumber);
       history.push(`+${value}`);
     } else {
-      setTotalCardAmount(totalCardAmount - valueAsNumber);
-      history.push(`-${value}`);
+      const newTotal = totalCardAmount - valueAsNumber;
+      if (newTotal < 0) {
+        // Error
+        setIsErrorToastVisible(true);
+      } else {
+        setTotalCardAmount(newTotal);
+        history.push(`-${value}`);
+      }
     }
+    // remove other Toast
     setIsAddToastVisible(false);
     setIsRemoveToastVisible(false);
+
     setValue("");
   };
 
@@ -76,6 +86,13 @@ const Account = () => {
               onChange={handleInputChange}
               onSubmit={() => handleSubmit(value, false)}
               buttonText="Remove"
+            />
+            <Toast
+              isVisible={isErrorToastVisible}
+              alertClass={isErrorToastVisible ? "alert" : ""}
+              message="You cannot remove this amount, your total amount is not enough."
+              onSubmit={() => setIsErrorToastVisible(false)}
+              buttonText="OK"
             />
           </div>
         </div>
