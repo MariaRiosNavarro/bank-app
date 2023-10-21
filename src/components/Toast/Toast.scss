@@ -29,6 +29,7 @@
           border-radius: 5px;
           padding: 0.5rem 1rem;
           border: none;
+          text-align: right;
         }
       }
     }
@@ -39,6 +40,11 @@
       color: $color;
       padding: 2em;
       width: 70vw;
+      button {
+        &:hover {
+          background-color: $color;
+        }
+      }
     }
   }
   .btn {
