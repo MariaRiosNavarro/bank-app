@@ -36,6 +36,7 @@ const Account = () => {
     setIsRemoveToastVisible(false);
     history.push(`-${value}`);
     setValue("");
+    console.log(history);
   };
 
   return (
