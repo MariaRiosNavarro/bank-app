@@ -8,10 +8,10 @@ import HistoryCard from "../components/HistoryCard/HistoryCard";
 
 const Account = () => {
   const { totalCardAmount, setTotalCardAmount } = useAppContext();
+  const { history } = useAppContext();
   const [isAddToastVisible, setIsAddToastVisible] = useState(false);
   const [isRemoveToastVisible, setIsRemoveToastVisible] = useState(false);
   const [value, setValue] = useState(0);
-  const [history, setHistory] = useState([]);
 
   const openAddInput = () => {
     setIsAddToastVisible(true);

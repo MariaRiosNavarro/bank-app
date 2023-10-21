@@ -7,9 +7,12 @@ export const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
   const [totalCardAmount, setTotalCardAmount] = useState(0);
+  const [history, setHistory] = useState([]);
 
   return (
-    <AppContext.Provider value={{ totalCardAmount, setTotalCardAmount }}>
+    <AppContext.Provider
+      value={{ totalCardAmount, setTotalCardAmount, history, setHistory }}
+    >
       {children}
     </AppContext.Provider>
   );
