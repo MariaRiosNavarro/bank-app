@@ -2,21 +2,41 @@ import "./Account.scss";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { useAppContext } from "../AppContext";
+import AccountCard from "../components/AccountCard/AccountCard";
+import { useState } from "react";
+import HistoryCard from "../components/HistoryCard/HistoryCard";
 
 const Account = () => {
   const { totalCardAmount, setTotalCardAmount } = useAppContext();
+  const [isAddToastVisible, setIsAddToastVisible] = useState(false);
+  const [isRemoveToastVisible, setIsRemoveToastVisible] = useState(false);
+  const [value, setValue] = useState(0);
+  const [history, setHistory] = useState([]);
 
-  const addValue = (value) => {
-    setTotalCardAmount(totalCardAmount + value);
+  const openAddInput = () => {
+    setIsAddToastVisible(true);
   };
 
-  const removeValue = (value) => {
-    setTotalCardAmount(totalCardAmount - value);
+  const openRemoveInput = () => {
+    setIsRemoveToastVisible(true);
   };
 
-  const openAddInput = () => {};
+  const addValue = () => {
+    const valueAsNumber = parseFloat(value);
+    setTotalCardAmount(totalCardAmount + valueAsNumber);
+    setIsAddToastVisible(false);
+    history.push(`+${value}`);
+    setValue("");
+    console.log(history);
+  };
 
-  const openRemoveInput = () => {};
+  const removeValue = () => {
+    const valueAsNumber = parseFloat(value);
+    setTotalCardAmount(totalCardAmount - valueAsNumber);
+    setIsRemoveToastVisible(false);
+    history.push(`-${value}`);
+    setValue("");
+  };
 
   return (
     <>
@@ -24,10 +44,54 @@ const Account = () => {
         <Header />
         <div className="page-wrapper">
           <h2>Account</h2>
-          <input type="number" />
-          <button>Add</button>
+          <div className="card-wrapper">
+            <AccountCard
+              name={"Credit Card"}
+              cardNumber={"0123 4567 8901 23"}
+              totalCardAmount={totalCardAmount}
+            />
+          </div>
+          {history.map((input, index) => (
+            <HistoryCard key={index} history={input} />
+          ))}
+          <div className="toast-wrapper">
+            <div
+              className={isAddToastVisible ? "display-block" : "display-none"}
+            >
+              <div className="center-toast toast-add">
+                <div className="toast">
+                  <div className="input-wrapper">
+                    <input
+                      type="number"
+                      value={value}
+                      onChange={(e) => setValue(e.target.value)}
+                    />
+                    <button onClick={addValue}>Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className={
+                isRemoveToastVisible ? "display-block" : "display-none"
+              }
+            >
+              <div className="center-toast toast-remove">
+                <div className="toast">
+                  <div className="input-wrapper">
+                    <input
+                      type="number"
+                      value={value}
+                      onChange={(e) => setValue(e.target.value)}
+                    />
+                    <button onClick={removeValue}>Remove</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <Footer onClickAdd={addValue} onClickRemove={removeValue} />
+        <Footer onClickAdd={openAddInput} onClickRemove={openRemoveInput} />
       </div>
     </>
   );
