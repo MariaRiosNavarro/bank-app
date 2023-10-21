@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useEffect, useRef } from "react";
 import "./Toast.scss";
 
 const Toast = ({
@@ -10,6 +11,22 @@ const Toast = ({
   message,
   alertClass,
 }) => {
+  const inputRef = useRef(null);
+
+  // Wenn the input is visible we put the focus inside with this input
+  useEffect(() => {
+    if (isVisible && !message) {
+      inputRef.current.focus();
+      inputRef.current.value = "";
+    }
+  }, [isVisible, message]);
+
+  const handleInputKeyDown = (e) => {
+    if (e.key === "Enter" && isVisible && !message) {
+      onSubmit();
+    }
+  };
+
   return (
     <div className={isVisible ? "display-block" : "display-none"}>
       <div className="center-toast">
@@ -18,7 +35,14 @@ const Toast = ({
             {message ? (
               <h3>{message}</h3>
             ) : (
-              <input type="number" value={value} onChange={onChange} />
+              <input
+                type="number"
+                ref={inputRef}
+                value={value}
+                onChange={onChange}
+                // Add the posibility to add/Remove values with enter key
+                onKeyDown={handleInputKeyDown}
+              />
             )}
             <button className="btn" onClick={onSubmit}>
               {buttonText}

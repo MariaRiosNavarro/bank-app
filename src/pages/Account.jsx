@@ -24,7 +24,7 @@ const Account = () => {
   };
 
   const handleSubmit = (value, isAdding) => {
-    const valueAsNumber = parseFloat(value);
+    const valueAsNumber = Number(value);
 
     if (isAdding) {
       setTotalCardAmount(totalCardAmount + valueAsNumber);
