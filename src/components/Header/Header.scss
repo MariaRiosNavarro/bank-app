@@ -2,9 +2,9 @@
 @import "../../mixin.scss";
 
 .header-wrapper {
-  border: 3px solid $comp-color;
-  outline-offset: 5px;
-  outline: 3px solid $color;
+  border: 3px double$color;
+  outline-offset: 3px;
+  outline: 3px double $comp-color;
   background-color: $light-text;
   color: $color;
   padding: 1rem;

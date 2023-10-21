@@ -14,8 +14,8 @@ const TotalAmount = () => {
       <div className="total-amount">
         <h2>Total Amount</h2>
         <div className="row space">
-          <span>€</span>
-          <h3 className="amount">{totalAmount}</h3>
+          <span className="euro">€</span>
+          <h3 className="amount total">{totalAmount}</h3>
         </div>
       </div>
     </>

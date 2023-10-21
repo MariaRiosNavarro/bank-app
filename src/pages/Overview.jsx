@@ -17,6 +17,7 @@ const Overview = () => {
             <TotalAmount totalCardAmount={totalCardAmount} />
             <Link to="/account">
               <AccountCard
+                className="pointer"
                 name={"Credit Card"}
                 cardNumber={"0123 4567 8901 23"}
                 totalCardAmount={totalCardAmount}

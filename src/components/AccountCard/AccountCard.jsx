@@ -11,8 +11,8 @@ const AccountCard = ({ name, cardNumber }) => {
         <h3>{name}</h3>
         <h4 className="card-number">{cardNumber}</h4>
         <div className="row space">
-          <span>€</span>
-          <p>{totalCardAmount}</p>
+          <span className="euro">€</span>
+          <p className="total">{totalCardAmount}</p>
         </div>
       </div>
     </>
