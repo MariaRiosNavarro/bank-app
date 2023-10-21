@@ -36,6 +36,16 @@ const Account = () => {
     setValue("");
   };
 
+  const filterNonNumeric = (inputValue) => {
+    return inputValue.replace(/[^0-9]/g, "");
+  };
+
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value;
+    const numericValue = filterNonNumeric(inputValue);
+    setValue(numericValue);
+  };
+
   return (
     <>
       <div className="wrapper">
@@ -56,14 +66,14 @@ const Account = () => {
             <Toast
               isVisible={isAddToastVisible}
               value={value}
-              onChange={(e) => setValue(e.target.value)}
+              onChange={handleInputChange}
               onSubmit={() => handleSubmit(value, true)}
               buttonText="Add"
             />
             <Toast
               isVisible={isRemoveToastVisible}
               value={value}
-              onChange={(e) => setValue(e.target.value)}
+              onChange={handleInputChange}
               onSubmit={() => handleSubmit(value, false)}
               buttonText="Remove"
             />
