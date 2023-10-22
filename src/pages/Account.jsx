@@ -7,6 +7,7 @@ import { useState } from "react";
 import HistoryCard from "../components/HistoryCard/HistoryCard";
 import Toast from "../components/Toast/Toast";
 import { pigSvg } from "../components/svg/svg";
+import { NULL } from "sass";
 
 const Account = () => {
   const { totalCardAmount, setTotalCardAmount } = useAppContext();
@@ -17,27 +18,43 @@ const Account = () => {
   const [isErrorToastVisible, setIsErrorToastVisible] = useState(false);
 
   const openAddInput = () => {
-    setIsAddToastVisible(true);
+    //toggle
+    setIsAddToastVisible(!isAddToastVisible);
   };
 
   const openRemoveInput = () => {
-    setIsRemoveToastVisible(true);
+    //toggle
+    setIsRemoveToastVisible(!isRemoveToastVisible);
   };
 
   const handleSubmit = (value, isAdding) => {
-    const valueAsNumber = Number(value);
+    const regex = /^[0-9.]+$/;
+
+    if (!regex.test(value)) {
+      return window.alert(
+        "Please enter a valid number with up to 2 decimal places, using a period (.) as the decimal separator."
+      );
+    }
+
+    const valueAsNumber = parseFloat(value);
 
     if (isAdding) {
-      setTotalCardAmount(totalCardAmount + valueAsNumber);
-      history.push(`+${value}`);
+      const newTotal = (
+        parseFloat(totalCardAmount) + parseFloat(valueAsNumber)
+      ).toFixed(2);
+      setTotalCardAmount(parseFloat(newTotal));
+      history.push(`+${valueAsNumber.toFixed(2)}`);
     } else {
-      const newTotal = totalCardAmount - valueAsNumber;
-      if (newTotal < 0) {
+      const newTotal = (
+        parseFloat(totalCardAmount) - parseFloat(valueAsNumber)
+      ).toFixed(2);
+      const numberNewTotal = parseFloat(newTotal);
+      if (numberNewTotal < 0) {
         // Error
-        setIsErrorToastVisible(true);
+        return setIsErrorToastVisible(true);
       } else {
-        setTotalCardAmount(newTotal);
-        history.push(`-${value}`);
+        setTotalCardAmount(numberNewTotal);
+        history.push(`-${valueAsNumber.toFixed(2)}`);
       }
     }
     // remove other Toast
@@ -47,14 +64,9 @@ const Account = () => {
     setValue("");
   };
 
-  const filterNonNumeric = (input) => {
-    return input.replace(/[^0-9.]/g, "");
-  };
-
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
-    const numericValue = filterNonNumeric(inputValue);
-    setValue(numericValue);
+    setValue(inputValue);
   };
 
   return (

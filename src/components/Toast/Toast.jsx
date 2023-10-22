@@ -36,7 +36,7 @@ const Toast = ({
               <h3>{message}</h3>
             ) : (
               <input
-                type="number"
+                type="text"
                 ref={inputRef}
                 value={value}
                 onChange={onChange}

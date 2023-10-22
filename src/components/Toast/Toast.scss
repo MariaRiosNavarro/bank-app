@@ -9,10 +9,10 @@
     display: none;
   }
   .center-toast {
-    position: absolute;
+    position: fixed;
     left: 50%;
     translate: -50%;
-    top: 50vh;
+    top: 60vh;
     @include center-column;
     .toast {
       background-color: $color;
