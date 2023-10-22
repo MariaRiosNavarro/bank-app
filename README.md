@@ -1,10 +1,10 @@
-# Prop Bank (Mobile First) with Global State (useContext) & React Router
+# Prop Bank - (Mobile First) with Global State (useContext) & React Router
 
 The login is currently only fake and for now only one link, so you can click and test the app without any problems.
 
 At the moment it is not possible to add other cards (add/remove account buttons disabled), there is only one example account.
 
-# [Vercel Deployment](https://bank-app-rosy.vercel.app/)
+# [Vercel Deployment here](https://bank-app-rosy.vercel.app/)
 
 <div>
 <img src="./public/readme/readme1.png" alt="readme pic" width="300px"/>
