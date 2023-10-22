@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
 import { userSvg } from "../components/svg/svg";
 import LoginForm from "../components/LoginForm/LoginForm";
-import "./login.scss";
+import "./Login.scss";
 
 const Login = () => {
   return (

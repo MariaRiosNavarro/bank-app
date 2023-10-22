@@ -2,7 +2,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import AccountCard from "../components/AccountCard/AccountCard";
 import { Link } from "react-router-dom";
-import "./overview.scss";
+import "./Overview.scss";
 import { useAppContext } from "../AppContext";
 import TotalAmount from "../components/TotalAmount/TotalAmount";
 import { bankSvg } from "../components/svg/svg";

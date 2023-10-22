@@ -1,7 +1,7 @@
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { userSvg } from "../components/svg/svg";
-import "./user.scss";
+import "./User.scss";
 
 const User = () => {
   return (
