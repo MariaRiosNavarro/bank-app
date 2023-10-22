@@ -6,6 +6,7 @@ import AccountCard from "../components/AccountCard/AccountCard";
 import { useState } from "react";
 import HistoryCard from "../components/HistoryCard/HistoryCard";
 import Toast from "../components/Toast/Toast";
+import { pigSvg } from "../components/svg/svg";
 
 const Account = () => {
   const { totalCardAmount, setTotalCardAmount } = useAppContext();
@@ -46,8 +47,8 @@ const Account = () => {
     setValue("");
   };
 
-  const filterNonNumeric = (inputValue) => {
-    return inputValue.replace(/[^0-9]/g, "");
+  const filterNonNumeric = (input) => {
+    return input.replace(/[^0-9.]/g, "");
   };
 
   const handleInputChange = (e) => {
@@ -61,7 +62,7 @@ const Account = () => {
       <div className="wrapper">
         <Header />
         <div className="page-wrapper">
-          <h2>Account</h2>
+          <div className="center">{pigSvg}</div>
           <div className="card-wrapper">
             <AccountCard
               name={"Credit Card"}

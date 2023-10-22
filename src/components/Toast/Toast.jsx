@@ -40,6 +40,7 @@ const Toast = ({
                 ref={inputRef}
                 value={value}
                 onChange={onChange}
+                step={0.01}
                 // Add the posibility to add/Remove values with enter key
                 onKeyDown={handleInputKeyDown}
               />
