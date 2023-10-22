@@ -125,7 +125,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 ```
 
-3 - In any component where you want to access the global state, import and use your `useAppContext()` to get the context (curly brackets!).If you only need the state and not the setter, you can import only this state.:
+3 - In any component where you want to access the global state, import and use your `useAppContext()` to get the context (curly brackets!). If you only need the state and not the setter, you can use the state:
 
 ```jsx
 import React from "react";
