@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+@import "../../mixin.scss";
+
+form {
+  @include f-column;
+  gap: 0.5rem;
+  label {
+    text-align: left;
+  }
+  input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+  }
+}

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import "./overview.scss";
 import { useAppContext } from "../AppContext";
 import TotalAmount from "../components/TotalAmount/TotalAmount";
+import { bankSvg } from "../components/svg/svg";
+import { addCardSvg, removeCardSvg } from "../components/svg/svg";
 
 const Overview = () => {
   const { totalCardAmount } = useAppContext();
@@ -13,6 +15,7 @@ const Overview = () => {
       <div className="wrapper">
         <Header />
         <div className="page-wrapper">
+          <div className="center">{bankSvg}</div>
           <div className="card-wrapper">
             <TotalAmount totalCardAmount={totalCardAmount} />
             <Link to="/account">
@@ -25,7 +28,11 @@ const Overview = () => {
             </Link>
           </div>
         </div>
-        <Footer selected={"overview"} />
+        <Footer
+          selected={"overview"}
+          svgIconAdd={addCardSvg}
+          svgIconRemove={removeCardSvg}
+        />
       </div>
     </>
   );

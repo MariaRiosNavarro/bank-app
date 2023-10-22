@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
+import { userSvg } from "../components/svg/svg";
+import LoginForm from "../components/LoginForm/LoginForm";
+import "./login.scss";
 
 const Login = () => {
   return (
     <>
       <div className="wrapper">
         <Header />
-        <Link to="/overview" className="text-center">
-          <h2 className="center">Login</h2>
-        </Link>
+        <div className="login-wrapper">
+          <div className="center">{userSvg}</div>
+          <div className="card-wrapper">
+            <Link to="/overview" className="text-center">
+              <LoginForm></LoginForm>
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );

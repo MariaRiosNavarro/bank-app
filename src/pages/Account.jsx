@@ -7,7 +7,7 @@ import { useState } from "react";
 import HistoryCard from "../components/HistoryCard/HistoryCard";
 import Toast from "../components/Toast/Toast";
 import { pigSvg } from "../components/svg/svg";
-import { NULL } from "sass";
+import { addSvg, removeSvg } from "../components/svg/svg";
 
 const Account = () => {
   const { totalCardAmount, setTotalCardAmount } = useAppContext();
@@ -28,6 +28,7 @@ const Account = () => {
   };
 
   const handleSubmit = (value, isAdding) => {
+    // input validation
     const regex = /^[0-9.]+$/;
 
     if (!regex.test(value)) {
@@ -36,6 +37,7 @@ const Account = () => {
       );
     }
 
+    // input calculation
     const valueAsNumber = parseFloat(value);
 
     if (isAdding) {
@@ -109,7 +111,12 @@ const Account = () => {
             />
           </div>
         </div>
-        <Footer onClickAdd={openAddInput} onClickRemove={openRemoveInput} />
+        <Footer
+          onClickAdd={openAddInput}
+          onClickRemove={openRemoveInput}
+          svgIconAdd={addSvg}
+          svgIconRemove={removeSvg}
+        />
       </div>
     </>
   );
