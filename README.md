@@ -1,4 +1,4 @@
-# How to use React Router in React
+# A - How to use React Router in React
 
 1 - Install React Router
 
@@ -61,9 +61,9 @@ function Navigation() {
 }
 ```
 
-# How to use useContext for Global State in React
+# B - How to use useContext for Global State in React
 
-1 - Create a context file, e.g. AppContext.js (here), to define your global context. Here is an example of how to do this:
+1 - Create a context file, e.g. AppContext.js to define your global context. Here is an example of how to do this:
 
 ```jsx
 import { createContext, useContext, useState } from "react";
