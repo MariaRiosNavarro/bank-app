@@ -1,3 +1,32 @@
+### Prop Bank (Mobile First) with Global State (useContext) & React Router
+
+The login is currently only fake and for now only one link, so you can click and test the app without any problems.
+
+# [Deployment]()
+
+<div>
+<img src="./public/readme/readme1.png" alt="readme pic" width="200px"/>
+<img src="./public/readme/readme2.png" alt="readme pic" width="200px"/>
+<img src="./public/readme/readme3.png" alt="readme pic" width="200px"/>
+<img src="./public/readme/readme4.png" alt="readme pic" width="200px"/>
+<img src="./public/readme/readme5.png" alt="readme pic" width="200px"/>
+<img src="./public/readme/readme6.png" alt="readme pic" width="200px"/>
+<img src="./public/readme/readme7.png" alt="readme pic" width="200px"/>
+<img src="./public/readme/readme8.png" alt="readme pic" width="200px"/>
+<img src="./public/readme/readme9.png" alt="readme pic" width="200px"/>
+
+</div>
+
+## How to set it up
+
+Clone this repository
+
+Install all dependencies: `npm install`
+
+Run app in dev mode: npm run dev
+
+Open your localhost
+
 # A - How to use React Router in React
 
 1 - Install React Router
