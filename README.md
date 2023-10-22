@@ -32,6 +32,7 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    // ⬇️ Here below ⬇️
     <BrowserRouter>
       <App />
     </BrowserRouter>
@@ -87,7 +88,7 @@ AppProvider.propTypes = {
 };
 ```
 
-2 - Set up the core component (normally App.js), import AppProvider and wrap your application with it,
+2 - Set up the core component (normally App.js), import AppProvider and wrap your application with it. (Check allways that the import path is correct, here is an example, the path depends on your own structure.)
 
 ```jsx
 import React from "react";
@@ -95,6 +96,7 @@ import {  AppProvider  } from "./AppContext";
 
 function App() {
   return (
+     // ⬇️ Here below ⬇️
     <AppProvider>
       <App />
     <AppProvider>
@@ -104,7 +106,7 @@ function App() {
 export default App;
 ```
 
-However, in this repository I have done it in the root (main.js) because in the App are my Router routes.
+However, in this repository I have done it in the root (main.js) because in the App are my Router with the routes.
 
 ```jsx
 import React from "react";
@@ -117,6 +119,7 @@ import { AppProvider } from "./AppContext";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
+      // ⬇️ Here below ⬇️
       <AppProvider>
         <App />
       </AppProvider>
@@ -125,13 +128,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 ```
 
-3 - In any component where you want to access the global state, import and use your `useAppContext()` to get the context (curly brackets!). If you only need the state and not the setter, you can use the state:
+3 - In any component where you want to access the global state, import and use your `useAppContext()` to get the context (curly brackets!). If you only need the state and not the setter, you can use only the state:
 
 ```jsx
 import React from "react";
+ // ⬇️ Here below ⬇️
 import { useAppContext } from "./AppContext";
 
 const MyComponent = () => {
+     // ⬇️ Here below ⬇️
   const { globalState, setGlobalState } = useAppContext();
   ...
   return(
