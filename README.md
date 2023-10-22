@@ -1,4 +1,4 @@
-### Prop Bank (Mobile First) with Global State (useContext) & React Router
+# Prop Bank (Mobile First) with Global State (useContext) & React Router
 
 The login is currently only fake and for now only one link, so you can click and test the app without any problems.
 
@@ -19,7 +19,7 @@ At the moment it is not possible to add other cards (add/remove account buttons 
 
 </div>
 
-## How to set it up
+# How to set it up
 
 Clone this repository
 
