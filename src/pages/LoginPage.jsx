@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
 import { userSvg } from "../components/svg/svg";
 import LoginForm from "../components/LoginForm/LoginForm";
-import "./Login.scss";
+import "./LoginPage.scss";
 
-const Login = () => {
+const LoginPage = () => {
   return (
     <>
       <div className="wrapper">
@@ -12,7 +12,7 @@ const Login = () => {
         <div className="login-wrapper">
           <div className="center">{userSvg}</div>
           <div className="card-wrapper">
-            <Link to="/overview" className="text-center">
+            <Link to="/OverviewPage" className="text-center">
               <LoginForm></LoginForm>
             </Link>
           </div>
@@ -22,4 +22,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

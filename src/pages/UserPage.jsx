@@ -1,9 +1,9 @@
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { userSvg } from "../components/svg/svg";
-import "./User.scss";
+import "./UserPage.scss";
 
-const User = () => {
+const UserPage = () => {
   return (
     <>
       <div className="wrapper user-main">
@@ -33,4 +33,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default UserPage;

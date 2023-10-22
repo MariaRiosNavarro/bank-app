@@ -2,13 +2,13 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import AccountCard from "../components/AccountCard/AccountCard";
 import { Link } from "react-router-dom";
-import "./Overview.scss";
+import "./OverviewPage.scss";
 import { useAppContext } from "../AppContext";
 import TotalAmount from "../components/TotalAmount/TotalAmount";
 import { bankSvg } from "../components/svg/svg";
 import { addCardSvg, removeCardSvg } from "../components/svg/svg";
 
-const Overview = () => {
+const OverviewPage = () => {
   const { totalCardAmount } = useAppContext();
   return (
     <>
@@ -18,7 +18,7 @@ const Overview = () => {
           <div className="center">{bankSvg}</div>
           <div className="card-wrapper">
             <TotalAmount totalCardAmount={totalCardAmount} />
-            <Link to="/account">
+            <Link to="/AccountPage">
               <AccountCard
                 className="pointer"
                 name={"Credit Card"}
@@ -38,4 +38,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default OverviewPage;

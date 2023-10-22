@@ -1,4 +1,4 @@
-import "./Account.scss";
+import "./AccountPage.scss";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { useAppContext } from "../AppContext";
@@ -9,7 +9,7 @@ import Toast from "../components/Toast/Toast";
 import { pigSvg } from "../components/svg/svg";
 import { addSvg, removeSvg } from "../components/svg/svg";
 
-const Account = () => {
+const AccountPage = () => {
   const { totalCardAmount, setTotalCardAmount } = useAppContext();
   const { history } = useAppContext();
   const [isAddToastVisible, setIsAddToastVisible] = useState(false);
@@ -122,4 +122,4 @@ const Account = () => {
   );
 };
 
-export default Account;
+export default AccountPage;

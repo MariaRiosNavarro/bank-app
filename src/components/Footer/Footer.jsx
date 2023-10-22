@@ -13,7 +13,7 @@ const Footer = ({
 }) => {
   return (
     <div className="footer-wrapper">
-      <Link to="/overview">
+      <Link to="/OverviewPage">
         <NavigationButton
           svgIcon={homeSvg}
           selected={selected === "overview"}
@@ -21,7 +21,7 @@ const Footer = ({
       </Link>
       <NavigationButton svgIcon={svgIconAdd} onClick={onClickAdd} />
       <NavigationButton svgIcon={svgIconRemove} onClick={onClickRemove} />
-      <Link to="/user">
+      <Link to="/UserPage">
         <NavigationButton svgIcon={userSvg} selected={selected === "user"} />
       </Link>
     </div>
