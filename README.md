@@ -59,9 +59,9 @@ function App() {
   );
 ```
 
-3 - Wrapp in main.js your root or your App with the BrowserRouter your App, Example:
+3 - Wrapp in main.js your root OR in your App with the BrowserRouter your App, Example:
 
-3a- in Root, inside StrictMode.:
+3a- Example in Root, inside StrictMode.:
 
 ```jsx
 import React from "react";
@@ -80,7 +80,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 ```
 
-3b- in App
+3b- Example in App
 
 ```jsx
 import "./App.css";
