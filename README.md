@@ -92,7 +92,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-     // ⬇️ Here below ⬇️
+      // ⬇️ Here below ⬇️
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -102,9 +102,9 @@ function App() {
       </BrowserRouter>
     </>
   );
+}
 
-
-
+export default App;
 ```
 
 4 - Create internal links
@@ -121,6 +121,8 @@ function Navigation() {
     </nav>
   );
 }
+
+export default Navigation;
 ```
 
 ```css
