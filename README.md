@@ -108,7 +108,7 @@ export default App;
 ```
 
 4 - Create internal links
-To navigate between routes, use the Link or LinkNav component provided by React Router (allways you need to import it). For Navigation is the NavLink recomended. This Tag has a .active class, so we cann change the styles wenn the LinkNav is selected. For other routing we use Link. Example:
+To navigate between routes, use the Link or NavLink component provided by React Router (allways you need to import it). For Navigation is the NavLink recomended. This Tag has a .active class, so we cann change the styles wenn the NavLink is selected. For other routing we use Link. Example:
 
 ```js
 import { NavLink } from "react-router-dom";
