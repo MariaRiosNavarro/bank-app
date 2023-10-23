@@ -126,7 +126,7 @@ export default Navigation;
 ```
 
 ```css
-nav a .active {
+nav .active {
   background-color: red;
 }
 ```
