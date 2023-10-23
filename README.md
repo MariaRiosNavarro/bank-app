@@ -49,7 +49,7 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-     // ⬇️ Here below ⬇️
+     {//⬇️ Here below ⬇️}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -72,7 +72,7 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    // ⬇️ Here below ⬇️
+    {//⬇️ Here below ⬇️}
     <BrowserRouter>
       <App />
     </BrowserRouter>
@@ -92,7 +92,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      // ⬇️ Here below ⬇️
+       {//⬇️ Here below ⬇️}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -165,7 +165,7 @@ import {  AppProvider  } from "./AppContext";
 
 function App() {
   return (
-     // ⬇️ Here below ⬇️
+     {//⬇️ Here below ⬇️}
     <AppProvider>
       <App />
     <AppProvider>
@@ -188,7 +188,7 @@ import { AppProvider } from "./AppContext";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      // ⬇️ Here below ⬇️
+       {//⬇️ Here below ⬇️}
       <AppProvider>
         <App />
       </AppProvider>
@@ -205,7 +205,7 @@ import React from "react";
 import { useAppContext } from "./AppContext";
 
 const MyComponent = () => {
-     // ⬇️ Here below ⬇️
+      //⬇️ Here below ⬇️
   const { globalState, setGlobalState } = useAppContext();
   ...
   return(
