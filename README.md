@@ -40,19 +40,28 @@ Open your localhost
 In your root component (here it's done in App.js) and define the routes for your application using the Route component. Wrap your application with the Router component to enable routing (example):
 
 ```jsx
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./App.css";
+import Contact from "./pages/contact";
+import Home from "./pages/home";
+import About from "./pages/about";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <Route path="/" exact component={Home} />
-      <Route path="/about" component={About} />
-    </Router>
+    <>
+     // ⬇️ Here below ⬇️
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+    </>
   );
-}
 ```
 
-3 - Wrapp in main.js with the BrowserRouter your App, inside StrictMode. Example:
+3 - Wrapp in main.js your root or your App with the BrowserRouter your App, Example:
+
+3a- in Root, inside StrictMode.:
 
 ```jsx
 import React from "react";
@@ -69,6 +78,33 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+```
+
+3b- in App
+
+```jsx
+import "./App.css";
+import Contact from "./pages/contact";
+import Home from "./pages/home";
+import About from "./pages/about";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <>
+     // ⬇️ Here below ⬇️
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+
+
+
 ```
 
 4 - Create internal links
