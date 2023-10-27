@@ -175,28 +175,6 @@ function App() {
 export default App;
 ```
 
-However, in this repository I have done it in the root (main.js) because in the App are my Router with the routes.
-
-```jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.scss";
-import { BrowserRouter } from "react-router-dom";
-import { AppProvider } from "./AppContext";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-       {//⬇️ Here below ⬇️}
-      <AppProvider>
-        <App />
-      </AppProvider>
-    </BrowserRouter>
-  </React.StrictMode>
-);
-```
-
 3 - In any component where you want to access the global state, import and use your `useAppContext()` to get the context (curly brackets!). If you only need the state and not the setter, you can use only the state:
 
 ```jsx
